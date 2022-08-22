@@ -26,7 +26,8 @@ class FlatIterator:
         self.nest_cursor += 1
         return self.iter_list[self.iter_cursor][self.nest_cursor - 1]
 
-@main.homework_decorator
+
+@main.parametrized_decorator('log_file.txt')
 def flat_generator(iter_list, ignore_types=(str)):
     for x in iter_list:
         if hasattr(x, '__iter__') and not isinstance(x, ignore_types):
